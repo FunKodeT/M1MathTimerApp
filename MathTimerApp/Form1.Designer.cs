@@ -28,8 +28,9 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.timeLabel = new System.Windows.Forms.Label();
-            this.timeLeft = new System.Windows.Forms.Label();
+            this.timeLeftText = new System.Windows.Forms.Label();
             this.plusLeftLabel = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.plusRightLabel = new System.Windows.Forms.Label();
@@ -51,6 +52,7 @@
             this.label11 = new System.Windows.Forms.Label();
             this.dividedLeftLabel = new System.Windows.Forms.Label();
             this.startButton = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.sum)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.difference)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.product)).BeginInit();
@@ -67,15 +69,15 @@
             this.timeLabel.TabIndex = 0;
             this.timeLabel.Click += new System.EventHandler(this.label1_Click);
             // 
-            // timeLeft
+            // timeLeftText
             // 
-            this.timeLeft.AutoSize = true;
-            this.timeLeft.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLeft.Location = new System.Drawing.Point(159, 14);
-            this.timeLeft.Name = "timeLeft";
-            this.timeLeft.Size = new System.Drawing.Size(107, 25);
-            this.timeLeft.TabIndex = 1;
-            this.timeLeft.Text = "Time Left:";
+            this.timeLeftText.AutoSize = true;
+            this.timeLeftText.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timeLeftText.Location = new System.Drawing.Point(159, 14);
+            this.timeLeftText.Name = "timeLeftText";
+            this.timeLeftText.Size = new System.Drawing.Size(107, 25);
+            this.timeLeftText.TabIndex = 1;
+            this.timeLeftText.Text = "Time Left:";
             // 
             // plusLeftLabel
             // 
@@ -281,6 +283,11 @@
             this.startButton.UseVisualStyleBackColor = true;
             this.startButton.Click += new System.EventHandler(this.startButton_Click_1);
             // 
+            // timer1
+            // 
+            this.timer1.Interval = 1000;
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -307,7 +314,7 @@
             this.Controls.Add(this.plusRightLabel);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.plusLeftLabel);
-            this.Controls.Add(this.timeLeft);
+            this.Controls.Add(this.timeLeftText);
             this.Controls.Add(this.timeLabel);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
@@ -325,7 +332,7 @@
         #endregion
 
         private System.Windows.Forms.Label timeLabel;
-        private System.Windows.Forms.Label timeLeft;
+        private System.Windows.Forms.Label timeLeftText;
         private System.Windows.Forms.Label plusLeftLabel;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label plusRightLabel;
@@ -347,6 +354,7 @@
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label dividedLeftLabel;
         private System.Windows.Forms.Button startButton;
+        private System.Windows.Forms.Timer timer1;
     }
 }
 
