@@ -42,9 +42,9 @@
             this.minusLeftLabel = new System.Windows.Forms.Label();
             this.product = new System.Windows.Forms.NumericUpDown();
             this.label4 = new System.Windows.Forms.Label();
-            this.timeRightLabel = new System.Windows.Forms.Label();
+            this.timesRightLabel = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
-            this.timeLeftLabel = new System.Windows.Forms.Label();
+            this.timesLeftLabel = new System.Windows.Forms.Label();
             this.quotient = new System.Windows.Forms.NumericUpDown();
             this.label9 = new System.Windows.Forms.Label();
             this.dividedRightLabel = new System.Windows.Forms.Label();
@@ -191,15 +191,15 @@
             this.label4.Text = "×";
             this.label4.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // timeRightLabel
+            // timesRightLabel
             // 
-            this.timeRightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeRightLabel.Location = new System.Drawing.Point(206, 193);
-            this.timeRightLabel.Name = "timeRightLabel";
-            this.timeRightLabel.Size = new System.Drawing.Size(60, 50);
-            this.timeRightLabel.TabIndex = 14;
-            this.timeRightLabel.Text = "?";
-            this.timeRightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timesRightLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timesRightLabel.Location = new System.Drawing.Point(206, 193);
+            this.timesRightLabel.Name = "timesRightLabel";
+            this.timesRightLabel.Size = new System.Drawing.Size(60, 50);
+            this.timesRightLabel.TabIndex = 14;
+            this.timesRightLabel.Text = "?";
+            this.timesRightLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // label7
             // 
@@ -211,15 +211,15 @@
             this.label7.Text = "=";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // timeLeftLabel
+            // timesLeftLabel
             // 
-            this.timeLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.timeLeftLabel.Location = new System.Drawing.Point(50, 193);
-            this.timeLeftLabel.Name = "timeLeftLabel";
-            this.timeLeftLabel.Size = new System.Drawing.Size(60, 50);
-            this.timeLeftLabel.TabIndex = 12;
-            this.timeLeftLabel.Text = "?";
-            this.timeLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            this.timesLeftLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.timesLeftLabel.Location = new System.Drawing.Point(50, 193);
+            this.timesLeftLabel.Name = "timesLeftLabel";
+            this.timesLeftLabel.Size = new System.Drawing.Size(60, 50);
+            this.timesLeftLabel.TabIndex = 12;
+            this.timesLeftLabel.Text = "?";
+            this.timesLeftLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // quotient
             // 
@@ -279,6 +279,7 @@
             this.startButton.TabIndex = 0;
             this.startButton.Text = "Start the Quiz!";
             this.startButton.UseVisualStyleBackColor = true;
+            this.startButton.Click += new System.EventHandler(this.startButton_Click_1);
             // 
             // Form1
             // 
@@ -293,9 +294,9 @@
             this.Controls.Add(this.dividedLeftLabel);
             this.Controls.Add(this.product);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.timeRightLabel);
+            this.Controls.Add(this.timesRightLabel);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.timeLeftLabel);
+            this.Controls.Add(this.timesLeftLabel);
             this.Controls.Add(this.difference);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.minusRightLabel);
@@ -337,9 +338,9 @@
         private System.Windows.Forms.Label minusLeftLabel;
         private System.Windows.Forms.NumericUpDown product;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label timeRightLabel;
+        private System.Windows.Forms.Label timesRightLabel;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label timeLeftLabel;
+        private System.Windows.Forms.Label timesLeftLabel;
         private System.Windows.Forms.NumericUpDown quotient;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label dividedRightLabel;
