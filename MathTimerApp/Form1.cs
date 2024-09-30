@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -65,8 +66,8 @@ namespace MathTimerApp
             dividedRightLabel.Text = divisor.ToString();
             quotient.Value = 0;
             // Start the timer.
-            timeLeft = 30;
-            timeLabel.Text = "30 seconds";
+            timeLeft = 60;
+            timeLabel.Text = "60 seconds";
             timer1.Start();
         }
         /// <summary>
@@ -75,6 +76,10 @@ namespace MathTimerApp
         /// <returns>
         ///     True if the answer's correct, false otherwise.
         /// </returns>
+        //private bool CheckCurrentAnswer()
+        //{
+
+        //}
         private bool CheckTheAnswer()
         {
             if (
@@ -100,6 +105,7 @@ namespace MathTimerApp
         private void startButton_Click_1(object sender, EventArgs e)
         {
             StartTheQuiz();
+            timeLabel.BackColor = Color.White;
             startButton.Enabled = false;
         }
 
@@ -120,6 +126,10 @@ namespace MathTimerApp
                 // Decrease the time left by one second and display the new time left by updating the 'Time Left Label'.
                 timeLeft = timeLeft - 1;
                 timeLabel.Text = timeLeft + " seconds";
+                if (timeLabel.Text.Equals("5 seconds"))
+                {
+                    timeLabel.BackColor = Color.Red;
+                }
             }
             else
             {
@@ -132,6 +142,38 @@ namespace MathTimerApp
                 product.Value = multiplicand * multiplier;
                 quotient.Value = dividend / divisor;
                 startButton.Enabled = true;
+            }
+        }
+
+        private void sum_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void answer_Enter(object sender, EventArgs e)
+        {
+            // Select the whole answer in the NumericUpDown control.
+            NumericUpDown answerBox = sender as NumericUpDown;
+            if (answerBox != null)
+            {
+                int lengthOfAnswer = answerBox.Value.ToString().Length;
+                answerBox.Select(0, lengthOfAnswer);
+            }
+        }
+
+        private void check_CurAnswer(object sender, EventArgs e)
+        {
+            if(
+                (addend1 + addend2 == sum.Value)
+                || (minuend - subtrahend == difference.Value)
+                || (multiplicand * multiplier == product.Value)
+                || (dividend / divisor == quotient.Value)
+            )
+            {
+                Console.Beep();
+            } else
+            {
+                return;
             }
         }
     }
